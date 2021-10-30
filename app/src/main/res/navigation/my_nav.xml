@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.akshayteli.kotlinsafeargscustomobject.HomeFragment"
+        android:label="fragment_home">
+        <action
+            android:id="@+id/homeToDetail"
+            app:destination="@id/employeDetailFragment" />
+        <argument
+            android:name="employee"
+            app:argType="com.akshayteli.kotlinsafeargscustomobject.Employee" />
+    </fragment>
+    <fragment
+        android:id="@+id/employeDetailFragment"
+        android:name="com.akshayteli.kotlinsafeargscustomobject.EmployeDetailFragment"
+        android:label="fragment_employe_detail"
+        tools:layout="@layout/fragment_employe_detail" >
+        <action
+            android:id="@+id/detailToHome"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="employee"
+            app:argType="com.akshayteli.kotlinsafeargscustomobject.Employee" />
+    </fragment>
+</navigation>
